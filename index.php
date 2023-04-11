@@ -24,10 +24,9 @@ include __DIR__ . './function.php'
             <button type="submit" class="btn btn-primary">Genera password</button>
         </form>
 
-        <?php if (!empty($_GET['lunghezza_password'])) : ?>
-            <h5 class="my-4">La password generata è: <span class="text-success"><?php echo generatorePassword($lunghezza); ?></span></h5>
-        <?php endif; ?>
-    </div>
+        <?php
+        include __DIR__ . './password.php'
+        ?>
 
      <!-- js bootstrap -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
