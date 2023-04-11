@@ -7,6 +7,12 @@
     <title>PHP Strong Password Generator</title>
 </head>
 <body>
-    
+    <h1>Strong Password Generator</h1>
+
+	<form method="GET" action="">
+		<label for="lunghezza_password">Lunghezza password:</label>
+		<input type="number" id="lunghezza_password" name="lunghezza_password">
+		<input type="submit" value="Genera password">
+	</form>
 </body>
 </html>
