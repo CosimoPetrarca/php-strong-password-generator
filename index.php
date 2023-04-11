@@ -1,3 +1,16 @@
+<?php
+/* controllo se l'imput ha ricevuto un valore */
+if (!empty($_GET['lunghezza_password'])) {
+    $lunghezza = $_GET['lunghezza_password'];
+}
+/* funzione per generare password randomica */
+function generatorePassword($lunghezza)
+{
+    $caratteri = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}[]|\:;"<>,.?/!@#$%^&*';
+    return substr(str_shuffle($caratteri), 0, $lunghezza);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +24,12 @@
 
 	<form method="GET" action="">
 		<label for="lunghezza_password">Lunghezza password:</label>
-		<input type="number" id="lunghezza_password" name="lunghezza_password">
+		<input type="number" id="lunghezza_password" name="lunghezza_password" placeholder="Inserisci il numero di caratteri">
 		<input type="submit" value="Genera password">
 	</form>
+
+    <?php if (!empty($_GET['lunghezza_password'])) : ?>
+            <p><?php echo generatorePassword($lunghezza); ?></p>
+     <?php endif; ?>
 </body>
 </html>
